@@ -26,10 +26,24 @@ import { authenticateUser } from './middleware/authMiddleware.js';
 // const cors = require('cors');
 import cors from 'cors';
 
+// app.use(cors({
+//   origin: 'https://spjob-tracker.netlify.app', // or Netlify URL
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true
+// }));
+
+const allowedOrigins = ['http://localhost:5173', 'https://spjob-tracker.netlify.app'];
+
 app.use(cors({
-  origin: 'https://spjob-tracker.netlify.app', // or Netlify URL
+  origin: (origin, callback) => {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  credentials: true,  // Allow credentials such as cookies
 }));
 
 
