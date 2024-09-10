@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { JOB_STATUS , JOB_TYPE } from '../../shared/constants.mjs';
+import { JOB_STATUS , JOB_TYPE } from '../utils/constants.js';
 const JobSchema = new mongoose.Schema(
   {
     company: String,
@@ -18,7 +18,7 @@ const JobSchema = new mongoose.Schema(
       type: String,
       default: 'my city',
     },
-    JobDate: {
+    jobDate: {
       type: Date,
       default: Date.now,
     },

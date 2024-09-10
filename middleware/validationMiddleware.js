@@ -4,7 +4,7 @@ import {
   NotFoundError,
   UnauthorizedError,
 } from '../errors/customErrors.js';
-import { JOB_STATUS, JOB_TYPE } from '../../shared/constants.mjs'
+import { JOB_STATUS, JOB_TYPE } from '../utils/constants.js'
 import mongoose from 'mongoose';
 import Job from '../models/JobModel.js';
 import User from '../models/UserModel.js';
@@ -43,7 +43,7 @@ export const validateJobInput = withValidationErrors([
     .isIn(Object.values(JOB_TYPE))
     .withMessage('invalid type value'),
     body('salary').notEmpty().withMessage(`${JOB_TYPE === 'internship' ? 'Stipend' : 'Salary'} is required`),
-    body('JobDate').notEmpty().withMessage('Date is required'),
+    body('jobDate').notEmpty().withMessage('Date is required'),
 ]);
 
 

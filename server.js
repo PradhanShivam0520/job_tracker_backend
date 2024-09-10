@@ -23,7 +23,8 @@ import path from 'path';
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 import { authenticateUser } from './middleware/authMiddleware.js';
 
-const cors = require('cors');
+// const cors = require('cors');
+import cors from 'cors';
 
 app.use(cors({
   origin: 'https://your-frontend-url.vercel.app', // or Netlify URL
