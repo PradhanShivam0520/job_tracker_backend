@@ -27,7 +27,7 @@ import { authenticateUser } from './middleware/authMiddleware.js';
 import cors from 'cors';
 
 app.use(cors({
-  origin: 'https://your-frontend-url.vercel.app', // or Netlify URL
+  origin: 'https://spjob-tracker.netlify.app', // or Netlify URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
