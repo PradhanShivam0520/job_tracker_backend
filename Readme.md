@@ -1,0 +1,1 @@
+a mern stack app that allows a user to effortlessly manage your job applications while focusing on your career growth.
